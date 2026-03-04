@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAZY TECH - Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://files.catbox.moe/2sbsgm.png" alt="EAZY TECH" class="logo-img">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="payment.html" class="active">Pay</a></li>
+            <li><a href="complaint.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>💰 Make Payment</h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <!-- Payment Form -->
+            <div class="card" style="padding: 1.5rem;">
+                <h2 style="margin-bottom: 1.5rem;">M-PESA Payment</h2>
+                
+                <div class="form-group">
+                    <label>Booking ID</label>
+                    <input type="text" placeholder="e.g., #001" value="#001">
+                </div>
+                
+                <div class="form-group">
+                    <label>Amount (KSH)</label>
+                    <input type="number" placeholder="Amount" value="500">
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="07XX XXX XXX" value="0748 476 795">
+                </div>
+                
+                <!-- STK Push Placeholder -->
+                <div style="background: rgba(79, 195, 247, 0.1); border: 1px solid var(--neon); border-radius: 8px; padding: 1rem; margin: 1.5rem 0;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--neon);"></i>
+                        <div>
+                            <h3 style="margin-bottom: 0.3rem;">M-PESA STK Push</h3>
+                            <p style="font-size: 0.85rem;">Hapa tutaeka STK push ya till yako</p>
+                            <p style="font-size: 0.75rem; color: var(--text-secondary);">Demo: Customer receives payment prompt on phone</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn-primary" style="width: 100%;" onclick="showToast('Demo: STK Push sent to customer phone')">
+                    <i class="fas fa-lock"></i> Pay with M-PESA
+                </button>
+            </div>
+            
+            <!-- Till Info -->
+            <div>
+                <h2 style="margin-bottom: 1rem;">M-PESA Till Number</h2>
+                <div class="card" style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; color: var(--neon); margin-bottom: 0.5rem;">123456</div>
+                    <p style="font-size: 1.2rem;">Business: EAZY TECH</p>
+                    <p style="color: var(--text-secondary);">Owner: Edu</p>
+                </div>
+                
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Recent Payments</h3>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>#001</td>
+                            <td>KSH 500</td>
+                            <td><span class="badge badge-success">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>#002</td>
+                            <td>KSH 300</td>
+                            <td><span class="badge badge-pending">Pending</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    </script>
+</body>
+</html>
