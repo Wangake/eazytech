@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAZY TECH - Help</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://files.catbox.moe/2sbsgm.png" alt="EAZY TECH" class="logo-img">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="payment.html">Pay</a></li>
+            <li><a href="complaint.html" class="active">Help</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>📞 Customer Support</h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <!-- Complaint Form -->
+            <div class="card" style="padding: 1.5rem;">
+                <h2>Submit a Complaint</h2>
+                
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="07XX XXX XXX">
+                </div>
+                
+                <div class="form-group">
+                    <label>Booking ID (if any)</label>
+                    <input type="text" placeholder="e.g., #001">
+                </div>
+                
+                <div class="form-group">
+                    <label>Issue Type</label>
+                    <select>
+                        <option>Booking Issue</option>
+                        <option>Payment Problem</option>
+                        <option>Game/Movie Not Available</option>
+                        <option>Technical Issue</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" placeholder="Describe your issue..."></textarea>
+                </div>
+                
+                <button class="btn-primary" onclick="showToast('Demo: Complaint submitted. We\'ll respond within 1 hour.')">
+                    Submit Complaint
+                </button>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h2>Contact Us Directly</h2>
+                
+                <div class="card" style="margin-bottom: 1rem;" onclick="window.open('https://wa.me/254758476795')">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fab fa-whatsapp" style="font-size: 2rem; color: #25D366;"></i>
+                        <div>
+                            <h3>WhatsApp Support</h3>
+                            <p style="font-size: 0.85rem;">+254 758 476 795</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-bottom: 1rem;" onclick="showToast('Demo: Call dialog would open')">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-phone" style="font-size: 2rem; color: var(--neon);"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p style="font-size: 0.85rem;">+254 758 476 795</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="window.location.href='mailto:wangamegan@gmail.com'">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <i class="fas fa-envelope" style="font-size: 2rem; color: var(--neon);"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p style="font-size: 0.85rem;">wangamegan@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 style="margin: 2rem 0 1rem;">Office Location</h2>
+                <div class="card">
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p style="color: var(--text-secondary);">Open daily: 9AM - 10PM</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EAZY TECH. Support: wangamegan@gmail.com | +254 758 476 795</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    </script>
+</body>
+</html>
