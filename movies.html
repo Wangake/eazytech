@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAZY TECH - Movies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://files.catbox.moe/2sbsgm.png" alt="EAZY TECH" class="logo-img">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="movies.html" class="active">Movies</a></li>
+            <li><a href="admin.html">Admin</a></li>
+            <li><a href="payment.html">Pay</a></li>
+            <li><a href="complaint.html">Help</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>🎬 Latest Movies 2026</h1>
+        
+        <!-- Search -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem;">
+            <input type="text" id="movieSearch" placeholder="Search movies..." style="flex: 1;">
+            <button class="btn-primary" onclick="searchMovies()">Search</button>
+        </div>
+
+        <!-- Movies Grid -->
+        <div class="card-grid" id="moviesGrid">
+            <!-- Movies loaded via JS -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="https://files.catbox.moe/2sbsgm.png" alt="EAZY TECH" class="footer-logo">
+                <p>Your #1 gaming & cyber hub.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function searchMovies() {
+            const searchTerm = document.getElementById('movieSearch').value || 'movie';
+            const grid = document.getElementById('moviesGrid');
+            
+            // Demo movies - in real app, this would be API call
+            const demoMovies = [
+                { title: 'Avatar 3', year: '2026', rating: '⭐ 8.5', image: 'https://via.placeholder.com/200?text=Avatar+3' },
+                { title: 'Godzilla x Kong 2', year: '2026', rating: '⭐ 7.8', image: 'https://via.placeholder.com/200?text=Godzilla' },
+                { title: 'Spider-Man 4', year: '2026', rating: '⭐ 8.2', image: 'https://via.placeholder.com/200?text=Spider+Man' },
+                { title: 'Dune: Messiah', year: '2026', rating: '⭐ 8.7', image: 'https://via.placeholder.com/200?text=Dune' },
+                { title: 'Fast X: Part 2', year: '2026', rating: '⭐ 7.5', image: 'https://via.placeholder.com/200?text=Fast+X' },
+                { title: 'Mission: Impossible 8', year: '2026', rating: '⭐ 8.4', image: 'https://via.placeholder.com/200?text=MI8' }
+            ];
+            
+            grid.innerHTML = demoMovies.map(movie => `
+                <div class="card" onclick="showToast('Demo: ${movie.title} selected')">
+                    <img src="${movie.image}" alt="${movie.title}" class="card-image">
+                    <h4>${movie.title}</h4>
+                    <p>${movie.year} • ${movie.rating}</p>
+                    <button class="btn" style="margin-top: 0.5rem; width: 100%;" 
+                            onclick="event.stopPropagation(); showToast('Demo: Booking ${movie.title}')">
+                        Book Ticket
+                    </button>
+                </div>
+            `).join('');
+            
+            showToast(`Demo: Showing results for "${searchTerm}"`);
+        }
+
+        // Load movies on page load
+        searchMovies();
+    </script>
+</body>
+</html>
