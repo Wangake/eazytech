@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>EAZYTECH VENTURES | Premium Fiber Internet Eldoret</title>
+    <meta name="description" content="Fast fiber internet in Eldoret. Serving Langas, Mwanzo, Kapseret, Teleview with 24/7 support and professional installation.">
+    <meta name="theme-color" content="#0A2540">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0A2540;      /* Deep navy */
+            --primary-light: #1A3F5F;
+            --accent: #FFB800;        /* Gold */
+            --accent-soft: #FFD966;
+            --bg-dark: #07070e;
+            --bg-card: rgba(255,255,255,0.03);
+            --text: #f1f1f1;
+            --text-muted: #9ca3af;
+            --border: rgba(255,255,255,0.06);
+            --glass: rgba(10, 37, 64, 0.7);
+            
+            /* Light mode variables */
+            --light-bg: #f8fafc;
+            --light-text: #0f172a;
+            --light-card: #ffffff;
+            --light-border: #e2e8f0;
+        }
+        
+        /* Dark mode default */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        
+        body.light-mode {
+            background: var(--light-bg);
+            color: var(--light-text);
+        }
+        
+        body.light-mode .glass-card,
+        body.light-mode .feature-card,
+        body.light-mode nav,
+        body.light-mode footer {
+            background: var(--light-card);
+            border-color: var(--light-border);
+            color: var(--light-text);
+        }
+        
+        body.light-mode .text-muted {
+            color: #64748b;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom blob backgrounds */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        
+        body.light-mode .blob {
+            opacity: 0.2;
+        }
+        
+        @keyframes blobFloat {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50%      { transform: translate(20px, -20px) scale(1.05); }
+        }
+        
+        /* Navigation glass */
+        .nav-glass {
+            background: rgba(7,7,14,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: background 0.3s ease;
+        }
+        
+        body.light-mode .nav-glass {
+            background: rgba(255,255,255,0.85);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        /* Navigation links */
+        .nav-link {
+            position: relative;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--primary-light));
+            transition: width 0.22s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Theme toggle */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s ease;
+            color: var(--text-muted);
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255,184,0,0.1);
+            color: var(--accent);
+            transform: rotate(15deg);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+        }
+        
+        .btn:active {
+            transform: scale(0.97);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 8px 20px rgba(10,37,64,0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(10,37,64,0.5);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255,184,0,0.4);
+        }
+        
+        .btn-ghost {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        body.light-mode .btn-ghost {
+            background: white;
+            border-color: var(--light-border);
+            color: var(--light-text);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        /* Icon animation */
+        .icon-animated {
+            display: inline-flex;
+            transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        
+        .btn:hover .icon-animated {
+            transform: scale(1.2) rotate(-8deg);
+        }
+        
+        /* Cards */
+        .feature-card {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,184,0,0.3);
+            box-shadow: 0 20px 40px rgba(255,184,0,0.1);
+        }
+        
+        .feature-card .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,184,0,0.1);
+            border: 1px solid rgba(255,184,0,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .card-icon {
+            transform: scale(1.1) rotate(-6deg);
+            background: rgba(255,184,0,0.15);
+        }
+        
+        .feature-card .card-icon i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Package cards */
+        .package-card {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 28px;
+            position: relative;
+            transition: 0.3s ease;
+        }
+        
+        .package-card.popular {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+            background: rgba(255,184,0,0.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .speed-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+        
+        .price-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        /* Sidebar */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: rgba(7,7,14,0.98);
+            backdrop-filter: blur(12px);
+            border-right: 1px solid var(--border);
+            z-index: 100;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+            padding: 20px;
+        }
+        
+        body.light-mode #sidebar {
+            background: white;
+            border-right-color: var(--light-border);
+        }
+        
+        #sidebar.open {
+            transform: translateX(0);
+        }
+        
+        #sidebarOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 99;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        #sidebarOverlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+        
+        .sidebar-link:hover {
+            background: rgba(255,184,0,0.1);
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+        
+        /* Map container */
+        .map-container {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            height: 400px;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10,37,64,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .map-container:hover .map-overlay {
+            opacity: 1;
+        }
+        
+        .map-btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transform: translateY(20px);
+            transition: 0.3s ease;
+            pointer-events: auto;
+        }
+        
+        .map-container:hover .map-btn {
+            transform: translateY(0);
+        }
+        
+        /* Animations */
+        [data-anim] {
+            will-change: transform, opacity;
+            transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1);
+            opacity: 0;
+        }
+        
+        [data-anim="fade-up"] { transform: translateY(32px); }
+        [data-anim="fade-down"] { transform: translateY(-32px); }
+        [data-anim="fade-left"] { transform: translateX(-32px); }
+        [data-anim="fade-right"] { transform: translateX(32px); }
+        [data-anim="zoom-in"] { transform: scale(0.9); }
+        
+        [data-anim].in-view {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+        
+        [data-delay="1"] { transition-delay: 0.1s; }
+        [data-delay="2"] { transition-delay: 0.2s; }
+        [data-delay="3"] { transition-delay: 0.3s; }
+        [data-delay="4"] { transition-delay: 0.4s; }
+        [data-delay="5"] { transition-delay: 0.5s; }
+        
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,184,0,0.1);
+            border: 1px solid rgba(255,184,0,0.2);
+            border-radius: 50px;
+            padding: 4px 14px;
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 8px #4ade80;
+        }
+        
+        /* Coverage areas */
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .area-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            transition: 0.2s ease;
+        }
+        
+        .area-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        
+        .area-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            border-left: 4px solid var(--accent);
+            transform: translateX(400px);
+            transition: 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .package-card.popular {
+                transform: scale(1);
+            }
+            
+            .area-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Blobs -->
+    <div class="blob w-[500px] h-[500px] bg-yellow-500/10 top-[-100px] left-[-100px]" style="animation: blobFloat 14s ease-in-out infinite;"></div>
+    <div class="blob w-[400px] h-[400px] bg-blue-600/10 bottom-[5%] right-[-80px]" style="animation: blobFloat 18s ease-in-out 3s infinite;"></div>
+    <div class="blob w-[300px] h-[300px] bg-purple-600/10 top-[40%] left-[60%]" style="animation: blobFloat 22s ease-in-out 6s infinite;"></div>
+
+    <!-- Top Status Bar -->
+    <div class="bg-green-600 text-white text-center py-2 text-sm sticky top-0 z-50">
+        <i class="fas fa-check-circle"></i> Network Status: All systems operational • Fiber at 100%
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#0A2540] to-[#1A3F5F] flex items-center justify-center text-white font-bold text-sm">
+                    ET
+                </div>
+                <span class="font-black text-xl">
+                    <span style="color: var(--primary);">EAZY</span><span style="color: var(--accent);">TECH</span>
+                </span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#internet" class="nav-link">Internet</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#coverage" class="nav-link">Coverage</a>
+                <a href="#installations" class="nav-link">Installations</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <!-- Right side -->
+            <div class="flex items-center gap-3">
+                <!-- Theme toggle -->
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                
+                <!-- Desktop CTA -->
+                <a href="#payments" class="hidden md:flex btn btn-accent py-2 px-5 text-sm">
+                    <span class="icon-animated"><i class="fas fa-wifi"></i></span>
+                    Pay Bill
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-gray-400">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div id="sidebarOverlay"></div>
+    <aside id="sidebar">
+        <div class="flex items-center justify-between mb-8">
+            <a href="/" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#0A2540] to-[#1A3F5F] flex items-center justify-center text-white font-bold text-sm">
+                    ET
+                </div>
+                <span class="font-black">EAZYTECH</span>
+            </a>
+            <button id="closeBtn" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 text-gray-400">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="space-y-1">
+            <a href="#internet" class="sidebar-link"><i class="fas fa-wifi"></i> Internet</a>
+            <a href="#services" class="sidebar-link"><i class="fas fa-tools"></i> Services</a>
+            <a href="#coverage" class="sidebar-link"><i class="fas fa-map"></i> Coverage</a>
+            <a href="#installations" class="sidebar-link"><i class="fas fa-images"></i> Installations</a>
+            <a href="#payments" class="sidebar-link"><i class="fas fa-money-bill"></i> Make Payment</a>
+            <a href="#contact" class="sidebar-link"><i class="fas fa-phone"></i> Contact</a>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <div class="border-t border-white/10 pt-6">
+                <p class="text-xs text-gray-600">Langas • Mwanzo • Kapseret • Teleview</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-6 pt-20 pb-16">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="flex justify-center mb-8" data-anim="zoom-in">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-br from-[#0A2540] to-[#1A3F5F] flex items-center justify-center border-4 border-yellow-400/30">
+                        <i class="fas fa-wifi text-4xl text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mb-6" data-anim="fade-up" data-delay="1">
+                    <span class="badge">
+                        <span class="status-dot"></span>
+                        100% Fiber Network • 24/7 Support
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight" data-anim="fade-up" data-delay="2">
+                    Fastest Internet in<br>
+                    <span style="background: linear-gradient(135deg, #0A2540, #FFB800); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Eldoret Town
+                    </span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto" data-anim="fade-up" data-delay="3">
+                    Premium fiber connections for homes and businesses. 
+                    Serving Langas, Mwanzo, Kapseret, Teleview with lightning-fast speeds.
+                </p>
+                
+                <div class="flex flex-row items-center justify-center gap-4" data-anim="fade-up" data-delay="4">
+                    <a href="#internet" class="btn btn-accent">
+                        <span class="icon-animated"><i class="fas fa-bolt"></i></span>
+                        View Packages
+                    </a>
+                    <a href="#coverage" class="btn btn-ghost">
+                        <span class="icon-animated"><i class="fas fa-map"></i></span>
+                        Check Coverage
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20" data-anim="fade-up" data-delay="5">
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                        <div class="text-3xl font-bold text-yellow-400">247</div>
+                        <div class="text-sm text-gray-500">Active Clients</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                        <div class="text-3xl font-bold text-yellow-400">4</div>
+                        <div class="text-sm text-gray-500">Coverage Areas</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                        <div class="text-3xl font-bold text-yellow-400">24/7</div>
+                        <div class="text-sm text-gray-500">Support</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                        <div class="text-3xl font-bold text-yellow-400">5+</div>
+                        <div class="text-sm text-gray-500">Technicians</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internet Packages -->
+        <section id="internet" class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4" data-anim="fade-up">Internet Packages</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto" data-anim="fade-up" data-delay="1">
+                        Choose the speed that fits your needs. All packages include free installation and 24/7 local support.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Bronze -->
+                    <div class="package-card" data-anim="fade-up" data-delay="1">
+                        <div class="text-center">
+                            <div class="speed-value">20</div>
+                            <div class="text-sm text-gray-500 mb-2">Mbps</div>
+                            <div class="price-value">KES 1,500</div>
+                            <div class="text-xs text-gray-500 mb-6">per month</div>
+                            
+                            <ul class="text-left text-sm space-y-3 mb-8">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited data</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> WiFi router</li>
+                            </ul>
+                            
+                            <button onclick="showToast('Order 20Mbps - We\'ll contact you shortly')" class="btn btn-ghost w-full">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Silver (Popular) -->
+                    <div class="package-card popular" data-anim="fade-up" data-delay="2">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="text-center">
+                            <div class="speed-value">50</div>
+                            <div class="text-sm text-gray-500 mb-2">Mbps</div>
+                            <div class="price-value">KES 3,000</div>
+                            <div class="text-xs text-gray-500 mb-6">per month</div>
+                            
+                            <ul class="text-left text-sm space-y-3 mb-8">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited data</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Premium router</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Priority support</li>
+                            </ul>
+                            
+                            <button onclick="showToast('Order 50Mbps - We\'ll contact you shortly')" class="btn btn-accent w-full">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Gold -->
+                    <div class="package-card" data-anim="fade-up" data-delay="3">
+                        <div class="text-center">
+                            <div class="speed-value">100</div>
+                            <div class="text-sm text-gray-500 mb-2">Mbps</div>
+                            <div class="price-value">KES 5,000</div>
+                            <div class="text-xs text-gray-500 mb-6">per month</div>
+                            
+                            <ul class="text-left text-sm space-y-3 mb-8">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited data</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Mesh WiFi system</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Static IP optional</li>
+                            </ul>
+                            
+                            <button onclick="showToast('Order 100Mbps - We\'ll contact you shortly')" class="btn btn-ghost w-full">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Business -->
+                    <div class="package-card bg-gradient-to-br from-[#0A2540] to-[#1A3F5F]" data-anim="fade-up" data-delay="4">
+                        <div class="text-center">
+                            <div class="speed-value text-white">250</div>
+                            <div class="text-sm text-gray-300 mb-2">Mbps</div>
+                            <div class="price-value text-white">KES 8,000</div>
+                            <div class="text-xs text-gray-300 mb-6">per month</div>
+                            
+                            <ul class="text-left text-sm space-y-3 mb-8 text-gray-200">
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> Symmetrical speeds</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> 99.9% uptime SLA</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> Static IP included</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> Priority support</li>
+                            </ul>
+                            
+                            <button onclick="showToast('Business inquiry - We\'ll call you')" class="btn bg-white text-[#0A2540] w-full font-bold hover:bg-yellow-400">
+                                Contact Sales
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Areas -->
+        <section id="coverage" class="py-24 px-6 bg-[#0a0a12]">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-6" data-anim="fade-right">
+                            Coverage in <span class="text-yellow-400">Eldoret</span>
+                        </h2>
+                        <p class="text-gray-400 mb-8" data-anim="fade-right" data-delay="1">
+                            We're expanding fast across Eldoret. Currently serving these areas with fiber connections.
+                        </p>
+                        
+                        <div class="area-grid mb-8" data-anim="fade-right" data-delay="2">
+                            <div class="area-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <h3 class="font-bold">Langas</h3>
+                                <p class="text-xs text-gray-500">Fiber ready</p>
+                            </div>
+                            <div class="area-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <h3 class="font-bold">Mwanzo</h3>
+                                <p class="text-xs text-gray-500">Fiber ready</p>
+                            </div>
+                            <div class="area-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <h3 class="font-bold">Kapseret</h3>
+                                <p class="text-xs text-gray-500">Fiber ready</p>
+                            </div>
+                            <div class="area-item">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <h3 class="font-bold">Teleview</h3>
+                                <p class="text-xs text-gray-500">Fiber ready</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/5 rounded-2xl p-6" data-anim="fade-right" data-delay="3">
+                            <p class="font-bold mb-2">Coming Soon:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Eldoret Town</span>
+                                <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Huruma</span>
+                                <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Kipkenyo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map with overlay -->
+                    <div class="map-container" data-anim="fade-left" data-delay="2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753622471098!2d35.269942!3d0.514277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101ae4b7b3b3d%3A0x9b5b5b5b5b5b5b5b!2sEldoret!5e0!3m2!1sen!2ske!4v1234567890" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                        </iframe>
+                        <div class="map-overlay">
+                            <button onclick="window.open('https://maps.google.com/?q=Eldoret', '_blank')" class="map-btn">
+                                <i class="fas fa-external-link-alt mr-2"></i> Open Full Map
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-16" data-anim="fade-up">Our Services</h2>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- TV Mounting -->
+                    <div class="feature-card" data-anim="fade-up" data-delay="1" onclick="showToast('📺 TV Mounting: KES 1,500 - Call 0723 560 170')">
+                        <div class="card-icon"><i class="fas fa-tv"></i></div>
+                        <h3 class="text-xl font-bold mb-2">TV Wall Mounting</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional installation for all TV sizes. Neat cable management included.</p>
+                        <span class="text-yellow-400 font-bold">KES 1,500</span>
+                    </div>
+                    
+                    <!-- Computer Repair -->
+                    <div class="feature-card" data-anim="fade-up" data-delay="2" onclick="showToast('💻 Computer Repair: From KES 1,000 - Call 0723 560 170')">
+                        <div class="card-icon"><i class="fas fa-laptop"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Computer Repair</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Hardware & software fixes, virus removal, upgrades, and maintenance.</p>
+                        <span class="text-yellow-400 font-bold">From KES 1,000</span>
+                    </div>
+                    
+                    <!-- Wallpaper -->
+                    <div class="feature-card" data-anim="fade-up" data-delay="3" onclick="showToast('🖼️ Wallpaper: From KES 2,500 - Call 0723 560 170')">
+                        <div class="card-icon"><i class="fas fa-paint-roller"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Wallpaper Installation</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Transform your space with professional wallpaper installation.</p>
+                        <span class="text-yellow-400 font-bold">From KES 2,500</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payments" class="py-24 px-6 bg-[#0a0a12]">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0A2540] to-[#1A3F5F] flex items-center justify-center mx-auto mb-6" data-anim="zoom-in">
+                    <i class="fas fa-money-bill-wave text-2xl text-yellow-400"></i>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-black mb-4" data-anim="fade-up">M-PESA Payment</h2>
+                <p class="text-gray-400 mb-8" data-anim="fade-up" data-delay="1">Pay your subscription securely via M-PESA</p>
+                
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-md mx-auto" data-anim="fade-up" data-delay="2">
+                    <div class="mb-6">
+                        <div class="text-sm text-gray-500 mb-2">Paybill Number</div>
+                        <div class="text-3xl font-bold text-yellow-400">123456</div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-sm text-gray-500 mb-2">Account No.</div>
+                        <div class="text-xl font-bold">Your Phone Number</div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <input type="text" id="phone" value="07" placeholder="Phone Number" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white">
+                        <input type="number" id="amount" value="3000" placeholder="Amount" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white">
+                        
+                        <button onclick="stkPush()" class="btn btn-accent w-full py-4">
+                            <i class="fas fa-lock mr-2"></i> STK Push (Demo)
+                        </button>
+                    </div>
+                    
+                    <p class="text-xs text-gray-600 mt-4">
+                        Demo: In production, you'll receive payment prompt on phone
+                    </p>
+                </div>
+                
+                <!-- Quick amounts -->
+                <div class="grid grid-cols-4 gap-2 mt-4 max-w-md mx-auto">
+                    <button onclick="setAmount(1500)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-yellow-400/20 transition">1,500</button>
+                    <button onclick="setAmount(3000)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-yellow-400/20 transition">3,000</button>
+                    <button onclick="setAmount(5000)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-yellow-400/20 transition">5,000</button>
+                    <button onclick="setAmount(8000)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-yellow-400/20 transition">8,000</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-6" data-anim="fade-right">Visit Our Studio</h2>
+                        <p class="text-gray-400 mb-8" data-anim="fade-right" data-delay="1">Located in the heart of Eldoret, Langas area</p>
+                        
+                        <div class="space-y-6" data-anim="fade-right" data-delay="2">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-map-pin text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Address</h3>
+                                    <p class="text-gray-500">Langas Shopping Centre, Eldoret</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-phone text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Phone</h3>
+                                    <p class="text-gray-500">0723 560 170</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-envelope text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Email</h3>
+                                    <p class="text-gray-500">support@eazytech.co.ke</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-clock text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Hours</h3>
+                                    <p class="text-gray-500">Mon-Sat: 8AM - 8PM | Sun: 10AM - 4PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-8" data-anim="fade-left" data-delay="2">
+                        <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+                        <form onsubmit="event.preventDefault(); showToast('📨 Message sent! We\'ll respond within 1 hour.')">
+                            <div class="space-y-4">
+                                <input type="text" placeholder="Your Name" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <input type="email" placeholder="Email Address" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <input type="tel" placeholder="Phone Number" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <textarea rows="4" placeholder="Message" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl"></textarea>
+                                <button type="submit" class="btn btn-accent w-full py-4">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 bg-[#040408]">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#0A2540] to-[#1A3F5F] flex items-center justify-center text-white font-bold text-sm">
+                                ET
+                            </div>
+                            <span class="font-black text-xl">EAZYTECH</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Eldoret's most reliable fiber internet provider since 2020.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-gray-500">
+                            <li><a href="#internet" class="hover:text-yellow-400 transition">Internet</a></li>
+                            <li><a href="#services" class="hover:text-yellow-400 transition">Services</a></li>
+                            <li><a href="#coverage" class="hover:text-yellow-400 transition">Coverage</a></li>
+                            <li><a href="#payments" class="hover:text-yellow-400 transition">Make Payment</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-gray-500">
+                            <li>0723 560 170</li>
+                            <li>support@eazytech.co.ke</li>
+                            <li>Langas, Eldoret</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-yellow-400/20 transition"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-yellow-400/20 transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-yellow-400/20 transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-yellow-400/20 transition"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-white/10 pt-8 text-center text-gray-600 text-sm">
+                    <p>&copy; 2026 EAZYTECH VENTURES. All rights reserved. | Website by <span class="text-yellow-400">Megan</span></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/254723560170" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // Toast function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+        
+        // Set amount helper
+        function setAmount(amount) {
+            document.getElementById('amount').value = amount;
+        }
+        
+        // STK Push demo
+        function stkPush() {
+            const phone = document.getElementById('phone').value || '07********';
+            const amount = document.getElementById('amount').value;
+            showToast(`📱 STK Push sent to ${phone} for KES ${amount}. Check phone to complete payment.`);
+        }
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            if (document.body.classList.contains('light-mode')) {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+            }
+        });
+        
+        // Mobile sidebar
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuIcon = document.getElementById('menuIcon');
+        
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+            menuIcon.className = 'fas fa-times';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            menuIcon.className = 'fas fa-bars';
+            document.body.style.overflow = '';
+        }
+        
+        menuBtn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    closeSidebar();
+                }
+            });
+        });
+        
+        // Current year in footer
+        document.getElementById('yr').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
