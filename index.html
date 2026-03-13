@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>EAZYTECH VENTURES | Eldoret Fiber Internet</title>
+    <meta name="description" content="Premium fiber internet and technical services in Eldoret. Fast, reliable connections for home and business.">
+    <meta name="theme-color" content="#0A2540">
+    
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Animated Blobs -->
+    <div class="blob blob-1 w-[500px] h-[500px] top-[-100px] left-[-100px]"></div>
+    <div class="blob blob-2 w-[400px] h-[400px] bottom-[5%] right-[-80px]"></div>
+    <div class="blob blob-3 w-[300px] h-[300px] top-[40%] left-[60%]"></div>
+
+    <!-- Network Status Bar -->
+    <div class="bg-green-600 text-white text-center py-2 text-sm sticky top-0 z-50">
+        <i class="fas fa-check-circle"></i> Network Status: All systems operational • Fiber at 100%
+    </div>
+
+    <!-- Navbar -->
+    <nav class="nav-glass sticky top-8 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 no-underline group">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#0A2540] to-[#FFB800] flex items-center justify-center text-white font-bold text-sm">
+                    ET
+                </div>
+                <span class="text-base font-bold">
+                    <span class="text-white">EAZY</span><span class="text-[#FFB800]">TECH</span>
+                </span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-7">
+                <a href="#internet" class="nav-link">Internet</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Installations</a>
+                <a href="#coverage" class="nav-link">Coverage</a>
+                <a href="#payments" class="nav-link">Pay</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <a href="#payments" class="hidden md:inline-flex btn btn-accent py-2 px-5 text-xs">
+                    <span class="icon-animated"><i class="fas fa-wifi"></i></span> Pay Bill
+                </a>
+                <button id="menuBtn" class="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/8 text-gray-500 outline-none">
+                    <i class="fas fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebarOverlay" class="fixed inset-0 z-40 bg-black/60 opacity-0 pointer-events-none"></div>
+    <aside id="sidebar" class="fixed top-0 left-0 z-50 h-full w-72 bg-[#0a0a14] border-r border-white/6 flex flex-col pt-5 pb-8 transform -translate-x-full rounded-r-3xl">
+        <div class="flex items-center justify-between px-5 mb-6">
+            <a href="/" class="flex items-center gap-2.5 no-underline">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#0A2540] to-[#FFB800] flex items-center justify-center text-white font-bold text-sm">
+                    ET
+                </div>
+                <span class="text-sm font-bold"><span class="text-white">EAZY</span><span class="text-[#FFB800]">TECH</span></span>
+            </a>
+            <button id="closeBtn" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 text-gray-400">
+                <i class="fas fa-times text-sm"></i>
+            </button>
+        </div>
+        <div class="px-3 flex-1 space-y-1">
+            <a href="#internet" class="sidebar-link"><i class="fas fa-wifi"></i> Internet</a>
+            <a href="#services" class="sidebar-link"><i class="fas fa-tools"></i> Services</a>
+            <a href="#gallery" class="sidebar-link"><i class="fas fa-images"></i> Installations</a>
+            <a href="#coverage" class="sidebar-link"><i class="fas fa-map"></i> Coverage</a>
+            <a href="#payments" class="sidebar-link"><i class="fas fa-money-bill"></i> Make Payment</a>
+            <a href="#contact" class="sidebar-link"><i class="fas fa-phone"></i> Contact</a>
+        </div>
+        <div class="px-5 pt-5 border-t border-white/6">
+            <p class="text-gray-600 text-xs flex items-center gap-1">
+                <img src="https://files.catbox.moe/c5nleu.png" alt="Megan" class="megan-avatar"> Created by <span class="text-[#FFB800]">Megan Tech</span>
+            </p>
+        </div>
+    </aside>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center px-5 pt-24 pb-16">
+            <div class="max-w-4xl mx-auto w-full">
+                <div class="flex justify-center mb-6" data-anim="rotate-in">
+                    <div class="hero-avatar flex items-center justify-center bg-gradient-to-br from-[#0A2540] to-[#FFB800]">
+                        <i class="fas fa-wifi text-3xl text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mb-5" data-anim="fade-up" data-delay="1">
+                    <span class="badge-pill"><span class="status-dot"></span> 100% Fiber Network • 24/7 Support</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] mb-5" data-anim="flip-in" data-delay="2">
+                    <span class="gradient-text">Fast Fiber Internet</span><br>
+                    <span class="text-white">in <span class="text-[#FFB800]">Eldoret</span></span>
+                </h1>
+                
+                <div class="text-gray-400 text-lg sm:text-xl mb-8 max-w-2xl mx-auto h-12" data-anim="fade-up" data-delay="3">
+                    <span id="typing-text"></span><span class="typing-cursor"></span>
+                </div>
+                
+                <div class="flex flex-row items-center justify-center gap-4" data-anim="fade-up" data-delay="4">
+                    <a href="#internet" class="btn btn-accent">
+                        <span class="icon-animated"><i class="fas fa-bolt"></i></span> View Packages
+                    </a>
+                    <a href="#coverage" class="btn btn-ghost">
+                        <span class="icon-animated"><i class="fas fa-map"></i></span> Check Coverage
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20" data-anim="fade-up" data-delay="5">
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover-glow">
+                        <div class="text-3xl font-bold text-[#FFB800] counter" data-target="247">0</div>
+                        <div class="text-sm text-gray-500">Active Clients</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover-glow">
+                        <div class="text-3xl font-bold text-[#FFB800] counter" data-target="6">0</div>
+                        <div class="text-sm text-gray-500">Coverage Areas</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover-glow">
+                        <div class="text-3xl font-bold text-[#FFB800] counter" data-target="24">0<small class="text-lg">/7</small></div>
+                        <div class="text-sm text-gray-500">Support</div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 hover-glow">
+                        <div class="text-3xl font-bold text-[#FFB800] counter" data-target="5">0<small class="text-lg">+</small></div>
+                        <div class="text-sm text-gray-500">Technicians</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internet Packages -->
+        <section id="internet" class="py-24 px-5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 gradient-text" data-anim="fade-up">Internet Packages</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto" data-anim="fade-up" data-delay="1">
+                        Choose the speed that fits your needs. All packages include free installation and 24/7 local support.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Bronze -->
+                    <div class="package-card" data-anim="fade-up" data-delay="1">
+                        <div class="text-center flex flex-col h-full">
+                            <div class="mb-3">
+                                <span class="text-sm font-bold text-[#FFB800]">BRONZE</span>
+                            </div>
+                            <div class="speed-value mb-1 counter" data-target="20">0</div>
+                            <div class="text-sm text-gray-500 mb-3">Mbps</div>
+                            <div class="text-2xl font-bold text-white mb-4">KES 1,500</div>
+                            <div class="text-xs text-gray-500 mb-4">per month</div>
+                            
+                            <ul class="text-left text-xs space-y-2 mb-5 flex-1">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited data</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> WiFi router</li>
+                            </ul>
+                            
+                            <button onclick="showToast('📞 Bronze package: We\'ll contact you shortly')" class="btn btn-ghost w-full text-sm py-2">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Silver -->
+                    <div class="package-card popular" data-anim="fade-up" data-delay="2">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="text-center flex flex-col h-full">
+                            <div class="mb-3">
+                                <span class="text-sm font-bold text-[#FFB800]">SILVER</span>
+                            </div>
+                            <div class="speed-value mb-1 counter" data-target="50">0</div>
+                            <div class="text-sm text-gray-500 mb-3">Mbps</div>
+                            <div class="text-2xl font-bold text-white mb-4">KES 3,000</div>
+                            <div class="text-xs text-gray-500 mb-4">per month</div>
+                            
+                            <ul class="text-left text-xs space-y-2 mb-5 flex-1">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited data</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Premium router</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Priority support</li>
+                            </ul>
+                            
+                            <button onclick="showToast('📞 Silver package: We\'ll contact you shortly')" class="btn btn-accent w-full text-sm py-2">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Gold -->
+                    <div class="package-card" data-anim="fade-up" data-delay="3">
+                        <div class="text-center flex flex-col h-full">
+                            <div class="mb-3">
+                                <span class="text-sm font-bold text-[#FFB800]">GOLD</span>
+                            </div>
+                            <div class="speed-value mb-1 counter" data-target="100">0</div>
+                            <div class="text-sm text-gray-500 mb-3">Mbps</div>
+                            <div class="text-2xl font-bold text-white mb-4">KES 5,000</div>
+                            <div class="text-xs text-gray-500 mb-4">per month</div>
+                            
+                            <ul class="text-left text-xs space-y-2 mb-5 flex-1">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Unlimited data</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Free installation</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Mesh WiFi system</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Static IP optional</li>
+                            </ul>
+                            
+                            <button onclick="showToast('📞 Gold package: We\'ll contact you shortly')" class="btn btn-ghost w-full text-sm py-2">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Business -->
+                    <div class="package-card bg-gradient-to-br from-[#0A2540] to-[#1A3F5F]" data-anim="fade-up" data-delay="4">
+                        <div class="text-center flex flex-col h-full">
+                            <div class="mb-3">
+                                <span class="text-sm font-bold text-[#FFB800]">BUSINESS</span>
+                            </div>
+                            <div class="speed-value mb-1 text-white counter" data-target="250">0</div>
+                            <div class="text-sm text-gray-300 mb-3">Mbps</div>
+                            <div class="text-2xl font-bold text-white mb-4">KES 8,000</div>
+                            <div class="text-xs text-gray-300 mb-4">per month</div>
+                            
+                            <ul class="text-left text-xs space-y-2 mb-5 flex-1 text-gray-200">
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> Symmetrical speeds</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> 99.9% uptime SLA</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> Static IP included</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i> Priority support</li>
+                            </ul>
+                            
+                            <button onclick="showToast('📞 Business inquiry: Our team will call you')" class="btn bg-white text-[#0A2540] w-full text-sm py-2 font-bold hover:bg-[#FFB800]">
+                                Contact Sales
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 px-5">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-4 gradient-text" data-anim="fade-up">Technical Services</h2>
+                <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto" data-anim="fade-up" data-delay="1">
+                    Beyond internet, we offer professional installation and repair services
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- TV Mounting -->
+                    <div class="feature-card" data-anim="fade-up" data-delay="1" onclick="showToast('📺 TV Mounting: KES 1,500 - Call 0723 560 170')">
+                        <div class="card-icon"><i class="fas fa-tv"></i></div>
+                        <h3 class="text-xl font-bold mb-2">TV Wall Mounting</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional installation for all TV sizes. Neat cable management included.</p>
+                        <span class="text-[#FFB800] font-bold">KES 1,500</span>
+                    </div>
+                    
+                    <!-- Computer Repair -->
+                    <div class="feature-card" data-anim="fade-up" data-delay="2" onclick="showToast('💻 Computer Repair: From KES 1,000 - Call 0723 560 170')">
+                        <div class="card-icon"><i class="fas fa-laptop"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Computer Repair</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Hardware & software fixes, virus removal, upgrades, and maintenance.</p>
+                        <span class="text-[#FFB800] font-bold">From KES 1,000</span>
+                    </div>
+                    
+                    <!-- Wallpaper -->
+                    <div class="feature-card" data-anim="fade-up" data-delay="3" onclick="showToast('🖼️ Wallpaper: From KES 2,500 - Call 0723 560 170')">
+                        <div class="card-icon"><i class="fas fa-paint-roller"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Wallpaper Installation</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Transform your space with professional wallpaper installation.</p>
+                        <span class="text-[#FFB800] font-bold">From KES 2,500</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24 px-5 bg-[#0a0a12]">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-4 gradient-text" data-anim="fade-up">Recent Installations</h2>
+                <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto" data-anim="fade-up" data-delay="1">
+                    See our work across Eldoret
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="gallery-item" data-anim="zoom-in" data-delay="1">
+                        <img src="https://files.catbox.moe/xgg8k3.jpg" alt="Fiber installation">
+                    </div>
+                    <div class="gallery-item" data-anim="zoom-in" data-delay="2">
+                        <img src="https://files.catbox.moe/qjuczh.jpg" alt="Office">
+                    </div>
+                    <div class="gallery-item" data-anim="zoom-in" data-delay="3">
+                        <img src="https://files.catbox.moe/a72z63.jpg" alt="Router">
+                    </div>
+                    <div class="gallery-item" data-anim="zoom-in" data-delay="4">
+                        <img src="https://files.catbox.moe/m8i1oi.jpg" alt="TV Mounting">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Section -->
+        <section id="coverage" class="py-24 px-5">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-6" data-anim="slide-left">
+                            Coverage in <span class="text-[#FFB800]">Eldoret</span>
+                        </h2>
+                        <p class="text-gray-400 mb-8" data-anim="slide-left" data-delay="1">
+                            We're expanding fast across Eldoret. Currently serving these areas with fiber connections.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-3 mb-8" data-anim="slide-left" data-delay="2">
+                            <div class="area-badge active"><i class="fas fa-check-circle mr-2 text-green-500"></i> Langas</div>
+                            <div class="area-badge active"><i class="fas fa-check-circle mr-2 text-green-500"></i> Mwanzo</div>
+                            <div class="area-badge active"><i class="fas fa-check-circle mr-2 text-green-500"></i> Kapseret</div>
+                            <div class="area-badge active"><i class="fas fa-check-circle mr-2 text-green-500"></i> Teleview</div>
+                        </div>
+                        
+                        <div class="bg-white/5 rounded-2xl p-6" data-anim="slide-left" data-delay="3">
+                            <p class="font-bold mb-2">Coming Soon:</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="area-badge">Eldoret Town</span>
+                                <span class="area-badge">Huruma</span>
+                                <span class="area-badge">Kipkenyo</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="map-container" data-anim="slide-right" data-delay="2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753622471098!2d35.269942!3d0.514277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x178101ae4b7b3b3d%3A0x9b5b5b5b5b5b5b5b!2sEldoret!5e0!3m2!1sen!2ske!4v1234567890" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                        </iframe>
+                        <div class="map-overlay">
+                            <button onclick="window.open('https://maps.google.com/?q=Eldoret', '_blank')" class="map-btn">
+                                <i class="fas fa-external-link-alt mr-2"></i> Open Full Map
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payments" class="py-24 px-5 bg-[#0a0a12]">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0A2540] to-[#FFB800] flex items-center justify-center mx-auto mb-6" data-anim="zoom-in">
+                    <i class="fas fa-money-bill-wave text-2xl text-white"></i>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-black mb-4 gradient-text" data-anim="fade-up">M-PESA Payment</h2>
+                <p class="text-gray-400 mb-8" data-anim="fade-up" data-delay="1">Pay your subscription securely via M-PESA</p>
+                
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-md mx-auto" data-anim="fade-up" data-delay="2">
+                    <div class="mb-6">
+                        <div class="text-sm text-gray-500 mb-2">Paybill Number</div>
+                        <div class="text-3xl font-bold text-[#FFB800]">123456</div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-sm text-gray-500 mb-2">Account No.</div>
+                        <div class="text-xl font-bold">Your Phone Number</div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <input type="text" id="phone" value="07" placeholder="Phone Number" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white">
+                        <input type="number" id="amount" value="3000" placeholder="Amount" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white">
+                        
+                        <button onclick="stkPush()" class="btn btn-accent w-full py-4">
+                            <i class="fas fa-lock mr-2"></i> STK Push (Demo)
+                        </button>
+                    </div>
+                    
+                    <p class="text-xs text-gray-600 mt-4">
+                        Demo: In production, you'll receive payment prompt on phone
+                    </p>
+                </div>
+                
+                <!-- Quick amounts -->
+                <div class="grid grid-cols-4 gap-2 mt-4 max-w-md mx-auto">
+                    <button onclick="setAmount(1500)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-[#FFB800]/20 transition">1,500</button>
+                    <button onclick="setAmount(3000)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-[#FFB800]/20 transition">3,000</button>
+                    <button onclick="setAmount(5000)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-[#FFB800]/20 transition">5,000</button>
+                    <button onclick="setAmount(8000)" class="bg-white/5 border border-white/10 rounded-lg p-2 text-sm hover:bg-[#FFB800]/20 transition">8,000</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-5">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black mb-6" data-anim="slide-left">Visit Our Studio</h2>
+                        <p class="text-gray-400 mb-8" data-anim="slide-left" data-delay="1">Located in the heart of Eldoret, Langas area</p>
+                        
+                        <div class="space-y-6" data-anim="slide-left" data-delay="2">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-[#FFB800]/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-map-pin text-[#FFB800]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Address</h3>
+                                    <p class="text-gray-500">Langas Shopping Centre, Eldoret</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-[#FFB800]/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-phone text-[#FFB800]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Phone</h3>
+                                    <p class="text-gray-500">0723 560 170</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-[#FFB800]/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-envelope text-[#FFB800]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Email</h3>
+                                    <p class="text-gray-500">support@eazytech.co.ke</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-[#FFB800]/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-clock text-[#FFB800]"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Hours</h3>
+                                    <p class="text-gray-500">Mon-Sat: 8AM - 8PM | Sun: 10AM - 4PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-8" data-anim="slide-right" data-delay="2">
+                        <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+                        <form onsubmit="event.preventDefault(); showToast('📨 Message sent! We\'ll respond within 1 hour.')">
+                            <div class="space-y-4">
+                                <input type="text" placeholder="Your Name" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <input type="email" placeholder="Email Address" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <input type="tel" placeholder="Phone Number" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl">
+                                <textarea rows="4" placeholder="Message" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl"></textarea>
+                                <button type="submit" class="btn btn-accent w-full py-4">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-5 bg-[#040408]">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div data-anim="fade-up">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#0A2540] to-[#FFB800] flex items-center justify-center text-white font-bold text-sm">
+                                ET
+                            </div>
+                            <span class="font-black text-xl"><span class="text-white">EAZY</span><span class="text-[#FFB800]">TECH</span></span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Eldoret's most reliable fiber internet provider since 2020.</p>
+                        <div class="flex items-center gap-1 mt-2 text-xs text-gray-600">
+                            <img src="https://files.catbox.moe/c5nleu.png" alt="Megan" class="megan-avatar"> Created by <span class="text-[#FFB800]">Megan Tech</span>
+                        </div>
+                    </div>
+                    
+                    <div data-anim="fade-up" data-delay="1">
+                        <h4 class="font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#internet" class="footer-link"><i class="fas fa-chevron-right text-[#FFB800] text-xs"></i> Internet</a></li>
+                            <li><a href="#services" class="footer-link"><i class="fas fa-chevron-right text-[#FFB800] text-xs"></i> Services</a></li>
+                            <li><a href="#coverage" class="footer-link"><i class="fas fa-chevron-right text-[#FFB800] text-xs"></i> Coverage</a></li>
+                            <li><a href="#payments" class="footer-link"><i class="fas fa-chevron-right text-[#FFB800] text-xs"></i> Make Payment</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div data-anim="fade-up" data-delay="2">
+                        <h4 class="font-bold mb-4">Contact</h4>
+                        <ul class="space-y-2">
+                            <li class="footer-link"><i class="fas fa-phone text-[#FFB800] text-xs"></i> 0723 560 170</li>
+                            <li class="footer-link"><i class="fas fa-envelope text-[#FFB800] text-xs"></i> support@eazytech.co.ke</li>
+                            <li class="footer-link"><i class="fas fa-map-marker-alt text-[#FFB800] text-xs"></i> Langas, Eldoret</li>
+                        </ul>
+                    </div>
+                    
+                    <div data-anim="fade-up" data-delay="3">
+                        <h4 class="font-bold mb-4">Follow Us</h4>
+                        <div class="flex gap-3">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="divider-line mb-5"></div>
+                
+                <div class="text-center text-gray-600 text-sm">
+                    <p>&copy; 2026 EAZYTECH VENTURES. All rights reserved. | Website by <span class="text-[#FFB800]">Megan Tech</span></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/254723560170" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition z-50 hover-glow">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
